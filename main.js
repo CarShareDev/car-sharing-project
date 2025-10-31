@@ -1,90 +1,66 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // ------------------------------------------------------------------
-    // 1. Language Toggle (EN/AR)
-    // ------------------------------------------------------------------
-    const langToggle = document.getElementById('langToggle');
-    let isEnglish = true;
-    
-    // Function to apply the language change
-    function setLanguage(lang) {
-        document.querySelectorAll('[data-en], [data-ar]').forEach(element => {
-            const translation = lang === 'ar' ? element.getAttribute('data-ar') : element.getAttribute('data-en');
-            if (translation) {
-                element.textContent = translation;
-            }
-        });
-        
-        document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
-        document.body.classList.toggle('arabic', lang === 'ar');
-        document.body.classList.toggle('english', lang === 'en');
-        isEnglish = lang === 'en';
-        langToggle.textContent = isEnglish ? 'EN / عربي' : 'AR / English';
-    }
-
-    // Toggle button click handler
-    if (langToggle) {
-        langToggle.addEventListener('click', () => {
-            setLanguage(isEnglish ? 'ar' : 'en');
-        });
-    }
-
-    // Set initial language to English
-    setLanguage('en'); 
-
-    // ------------------------------------------------------------------
-    // 2. Stats Counter Animation
-    // ------------------------------------------------------------------
-    const statsCounters = document.querySelectorAll('.stats-counter');
-    const animateCounter = (el) => {
-        const target = parseInt(el.getAttribute('data-target'));
-        const start = 0;
-        const duration = 2000; 
-
+    // 1. Splitting for Hero Text animation
+    const heroText = document.getElementById('heroText');
+    if (heroText) {
+        Splitting({ target: heroText, by: 'chars' });
         anime({
-            targets: el,
-            innerHTML: [start, target],
-            easing: 'linear',
-            round: 1, // Round to the nearest integer
-            duration: duration,
+            targets: '.char',
+            translateY: [100, 0],
+            opacity: [0, 1],
+            easing: "easeOutExpo",
+            duration: 1200,
+            delay: (el, i) => 30 * i
         });
-    };
+    }
 
-    // Use Intersection Observer to animate when in view
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                animateCounter(entry.target);
-                observer.unobserve(entry.target); // Stop observing after animation
+    // 2. Stats Counter
+    const counters = document.querySelectorAll('.stats-counter');
+    counters.forEach(counter => {
+        const target = parseInt(counter.getAttribute('data-target'));
+        const duration = 2000;
+        const startTimestamp = performance.now();
+
+        const step = (timestamp) => {
+            const elapsed = timestamp - startTimestamp;
+            const progress = Math.min(elapsed / duration, 1);
+            const currentCount = Math.floor(progress * target);
+            
+            counter.textContent = currentCount.toString();
+            
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
             }
-        });
-    }, { threshold: 0.5 }); // Trigger when 50% of the element is visible
+        };
 
-    statsCounters.forEach(counter => {
-        observer.observe(counter);
+        window.requestAnimationFrame(step);
     });
 
-    // ------------------------------------------------------------------
-    // 3. Car Data Handling (Disabled to remove sample cars)
-    // ------------------------------------------------------------------
-    const carGrid = document.getElementById('carGrid');
-    const noCarsMessage = document.getElementById('noCarsMessage');
-    
-    // NOTE: The 'carsData' array has been removed from this file.
-    // If you add a server-side API later, you can fetch real data here.
+    // 3. Language Toggle (Simplified)
+    const langToggle = document.getElementById('langToggle');
+    let isArabic = false;
 
-    // Show 'No Cars' message since the data array is empty/removed
-    if (carGrid) {
-        carGrid.innerHTML = ''; // Ensure the grid is completely empty
-        if (noCarsMessage) {
-             // Since noCarsMessage is initially hidden in index.html, we show it
-             noCarsMessage.classList.remove('hidden');
-        }
+    if (langToggle) {
+        langToggle.addEventListener('click', () => {
+            isArabic = !isArabic;
+            document.body.classList.toggle('arabic', isArabic);
+            document.body.classList.toggle('rtl', isArabic);
+
+            // Update all elements with data-en/data-ar attributes
+            const elements = document.querySelectorAll('[data-en], [data-ar]');
+            elements.forEach(el => {
+                const text = isArabic ? el.getAttribute('data-ar') : el.getAttribute('data-en');
+                if (text) {
+                    el.textContent = text;
+                }
+            });
+            
+            langToggle.textContent = isArabic ? 'EN / عربي' : 'EN / عربي';
+        });
         
-        // This will display the message that there are no cars.
-        // We will manually append the message to the grid if it exists
-        if (noCarsMessage && carGrid) {
-             carGrid.appendChild(noCarsMessage);
+        // Initial setup for Arabic default (based on previous requests)
+        // If you prefer English default, remove the following lines:
+        if (langToggle) {
+            langToggle.click(); // Click once to set to Arabic initially
         }
     }
 });
