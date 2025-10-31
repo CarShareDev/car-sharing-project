@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-<base href="https://omranx75-debug.github.io/car-sharing-project/">
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Car Sharing - University Car Sharing Platform</title>
+    <title>Car Sharing - منصة مشاركة السيارات الجامعية</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
     <script src="https://unpkg.com/splitting@1.0.6/dist/splitting.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/splitting@1.0.6/dist/splitting.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Cairo:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
@@ -19,43 +17,25 @@
             --neutral: #2C3E50;
             --background: #FEFEFE;
         }
-        
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--background);
             color: var(--neutral);
         }
-        
         .arabic {
             font-family: 'Cairo', sans-serif;
         }
-        
-        .hero-gradient {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        .rtl {
+            direction: rtl;
+            text-align: right;
         }
-        
-        .card-hover {
-            transition: all 0.3s ease;
-        }
-        
-        .card-hover:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(13, 79, 79, 0.15);
-        }
-        
         .floating {
             animation: float 3s ease-in-out infinite;
         }
-        
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-10px); }
         }
-        
-        .rtl {
-            direction: rtl;
-        }
-        
         .stats-counter {
             font-size: 2.5rem;
             font-weight: 700;
@@ -75,8 +55,9 @@
                 </div>
                 
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#" class="text-gray-700 hover:text-teal-600 transition-colors" data-en="How it Works" data-ar="كيف تعمل">How it Works</a>
-                    <a href="#" class="text-gray-700 hover:text-teal-600 transition-colors" data-en="Trust &amp; Safety" data-ar="الثقة والأمان">Trust &amp; Safety</a>
+                    <a href="#vision" class="text-gray-700 hover:text-teal-600 transition-colors" data-en="Our Vision" data-ar="رؤيتنا">Our Vision</a>
+                    <a href="#features" class="text-gray-700 hover:text-teal-600 transition-colors" data-en="Key Features" data-ar="الميزات الأساسية">Key Features</a>
+                    <a href="#rules" class="text-gray-700 hover:text-teal-600 transition-colors" data-en="Rules &amp; Policies" data-ar="القواعد والسياسات">Rules &amp; Policies</a>
                 </div>
                 
                 <div class="flex items-center space-x-4">
@@ -91,223 +72,130 @@
 
     <section class="relative min-h-screen flex items-center justify-center overflow-hidden" style="margin-top: 64px;">
         <div class="absolute inset-0">
-            <img src="resources/hero-university.jpg" alt="University Campus" class="w-full h-full object-cover"/>
-            <div class="absolute inset-0 bg-black/40"></div>
+            <img src="resources/hero-utas-nizwa.jpg" alt="University of Technology and Applied Sciences, Nizwa" class="w-full h-full object-cover"/>
+            <div class="absolute inset-0 bg-black/50"></div>
         </div>
         
         <div class="relative z-10 max-w-4xl mx-auto px-4 text-center text-white">
-            <div class="floating mb-8">
-                <div class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto">
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                    </svg>
-                </div>
-            </div>
-            
             <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-                <span id="heroText" data-en="Share Cars, Save Money, Connect Campus" data-ar="شارك السيارات، ووفر المال، وتواصل مع الحرم الجامعي">Share Cars, Save Money, Connect Campus</span>
+                <span id="heroText" data-en="Share Smart, Drive Safe, Connect Campus" data-ar="شارك بذكاء، قد بأمان، وتواصل مع الحرم الجامعي">Share Smart, Drive Safe, Connect Campus</span>
             </h1>
             
-            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto opacity-90" data-en="Connect with fellow students to share cars, reduce costs, and build a sustainable campus community." data-ar="تواصل مع زملائك الطلاب لمشاركة السيارات، وتقليل التكاليف، وبناء مجتمع حرم جامعي مستدام.">
-                Connect with fellow students to share cars, reduce costs, and build a sustainable campus community.
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto opacity-90" data-en="The dedicated platform for UTAS students: connect car owners with short-term renters." data-ar="المنصة المخصصة لطلاب جامعة التقنية والعلوم التطبيقية: تربط ملاك السيارات بالمستأجرين لفترات قصيرة.">
+                The dedicated platform for UTAS students: connect car owners with short-term renters.
             </p>
             
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <a href="register.html" class="px-8 py-4 bg-white text-teal-600 rounded-xl font-semibold hover:bg-gray-100 transition-all transform hover:scale-105" data-en="Get Started" data-ar="ابدأ الآن">
                     Get Started
                 </a>
-                <a href="#how-it-works" class="px-8 py-4 border-2 border-white text-white rounded-xl font-semibold hover:bg-white hover:text-teal-600 transition-all" data-en="How it Works" data-ar="كيف يعمل">
-                    How it Works
+                <a href="#vision" class="px-8 py-4 border-2 border-white text-white rounded-xl font-semibold hover:bg-white hover:text-teal-600 transition-all" data-en="Learn More" data-ar="تعرف أكثر">
+                    Learn More
                 </a>
             </div>
         </div>
-        
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/70 animate-bounce">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-            </svg>
-        </div>
     </section>
 
-    <section class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                <div class="stats-item">
-                    <div class="stats-counter" data-target="250">0</div>
-                    <p class="text-gray-600 mt-2" data-en="Active Car Owners" data-ar="ملاك سيارات نشطون">Active Car Owners</p>
-                </div>
-                <div class="stats-item">
-                    <div class="stats-counter" data-target="1200">0</div>
-                    <p class="text-gray-600 mt-2" data-en="Happy Students" data-ar="طلاب سعداء">Happy Students</p>
-                </div>
-                <div class="stats-item">
-                    <div class="stats-counter" data-target="3500">0</div>
-                    <p class="text-gray-600 mt-2" data-en="Rides Completed" data-ar="رحلات مكتملة">Rides Completed</p>
-                </div>
-                <div class="stats-item">
-                    <div class="stats-counter" data-target="50">0</div>
-                    <p class="text-gray-600 mt-2" data-en="% Cost Savings (OMR)" data-ar="% توفير التكاليف (ر.ع.)">% Cost Savings (OMR)</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="how-it-works" class="py-20">
+    <section id="vision" class="py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4" data-en="How It Works" data-ar="كيف تعمل">
-                    How It Works
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4" data-en="Concept and Vision" data-ar="المفهوم والرؤية">
+                    Concept and Vision
                 </h2>
-                <p class="text-xl text-gray-600 max-w-2xl mx-auto" data-en="Simple steps to get you sharing and saving on campus transportation." data-ar="خطوات بسيطة لتبدأ في المشاركة والتوفير في النقل داخل الحرم الجامعي.">
-                    Simple steps to get you sharing and saving on campus transportation.
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto" data-en="Creating a smart, safe, and economical system for car sharing that minimizes idle car time and promotes sustainability on campus." data-ar="إنشاء نظام ذكي، آمن، واقتصادي لمشاركة السيارات يقلل من وقت توقفها ويعزز الاستدامة في الحرم الجامعي.">
+                    Creating a smart, safe, and economical system for car sharing that minimizes idle car time and promotes sustainability on campus.
                 </p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-                <div class="text-center">
-                    <div class="w-20 h-20 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-10 h-10 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4" data-en="1. Register &amp; Verify" data-ar="1. سجل ووثق">1. Register &amp; Verify</h3>
-                    <p class="text-gray-600" data-en="Sign up with your university email and verify your driver&#39;s license to get started." data-ar="سجل باستخدام بريدك الجامعي وأثبت رخصة القيادة الخاصة بك للبدء.">
-                        Sign up with your university email and verify your driver&#39;s license to get started.
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+                <div class="p-6 bg-white rounded-xl shadow-lg">
+                    <svg class="w-12 h-12 text-teal-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path></svg>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2" data-en="Economical" data-ar="اقتصادي">Economical</h3>
+                    <p class="text-gray-600" data-en="Owners earn income; renters save costs. All prices are clearly listed in Omani Rial (OMR)." data-ar="يكسب الملاك دخلاً ويوفر المستأجرون التكاليف. جميع الأسعار مدرجة بوضوح بـ **الريال العماني (ر.ع.)** .">
+                        Owners earn income; renters save costs. All prices are clearly listed in Omani Rial (OMR).
                     </p>
                 </div>
-                
-                <div class="text-center">
-                    <div class="w-20 h-20 bg-coral-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-10 h-10 text-coral-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4" data-en="2. List Car Availability" data-ar="2. أدرج توفر السيارة">2. List Car Availability</h3>
-                    <p class="text-gray-600" data-en="List your vehicle with your availability and pricing (OMR) for other verified students to see." data-ar="أدرج سيارتك مع توفرك وتسعيرك (ر.ع.) ليراه الطلاب الموثوقون الآخرون.">
-                        List your vehicle with your availability and pricing (OMR) for other verified students to see.
+                <div class="p-6 bg-white rounded-xl shadow-lg">
+                    <svg class="w-12 h-12 text-teal-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2" data-en="Safe &amp; Verified" data-ar="آمن وموثق">Safe &amp; Verified</h3>
+                    <p class="text-gray-600" data-en="Every user verifies their identity and license. Every transaction is protected." data-ar="يتحقق كل مستخدم من هويته ورخصته. كل معاملة محمية.">
+                        Every user verifies their identity and license. Every transaction is protected.
                     </p>
                 </div>
-                
-                <div class="text-center">
-                    <div class="w-20 h-20 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-10 h-10 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4" data-en="3. Share &amp; Save" data-ar="3. شارك ووفر">3. Share &amp; Save</h3>
-                    <p class="text-gray-600" data-en="Meet up, exchange keys, and enjoy affordable transportation while building community." data-ar="التقوا، تبادلوا المفاتيح، واستمتعوا بنقل ميسور التكلفة (بالريال) أثناء بناء المجتمع.">
-                        Meet up, exchange keys, and enjoy affordable transportation while building community.
+                <div class="p-6 bg-white rounded-xl shadow-lg">
+                    <svg class="w-12 h-12 text-teal-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m-1.674-3.774A9.85 9.85 0 0012 18a9.85 9.85 0 00-7.326-3.774M21 12a9 9 0 00-9-9m0 0a9 9 0 00-9 9m9-9c-2.485 0-4.5 2.015-4.5 4.5S9.515 12 12 12s4.5-2.015 4.5-4.5S14.485 3 12 3z"></path></svg>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2" data-en="Sustainable Campus" data-ar="حرم جامعي مستدام">Sustainable Campus</h3>
+                    <p class="text-gray-600" data-en="Reduce car idling time and promote efficient resource use among students." data-ar="تقليل وقت توقف السيارات وتعزيز كفاءة استخدام الموارد بين الطلاب.">
+                        Reduce car idling time and promote efficient resource use among students.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-20 bg-gray-50">
+    <section id="features" class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6" data-en="Trust &amp; Safety First" data-ar="الثقة والأمان أولاً">
-                        Trust &amp; Safety First
-                    </h2>
-                    <p class="text-xl text-gray-600 mb-8" data-en="Your safety is our top priority. Every user is verified, every car is insured, and every transaction is protected." data-ar="سلامتك هي أولويتنا القصوى. كل مستخدم موثق، كل سيارة مؤمنة، وكل معاملة محمية.">
-                        Your safety is our top priority. Every user is verified, every car is insured, and every transaction is protected.
-                    </p>
-                    
-                    <div class="space-y-6">
-                        <div class="flex items-start space-x-4">
-                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                                <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                </svg>
-                            </div>
-                            <div>
-                                <h3 class="text-lg font-semibold text-gray-900" data-en="Verified Users" data-ar="مستخدمون موثقون">Verified Users</h3>
-                                <p class="text-gray-600" data-en="All users verify their identity with university email and driver&#39;s license." data-ar="جميع المستخدمين يوثقون هويتهم باستخدام البريد الجامعي ورخصة القيادة.">
-                                    All users verify their identity with university email and driver&#39;s license.
-                                </p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start space-x-4">
-                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                                <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                </svg>
-                            </div>
-                            <div>
-                                <h3 class="text-lg font-semibold text-gray-900" data-en="Insurance Coverage" data-ar="تغطية تأمينية">Insurance Coverage</h3>
-                                <p class="text-gray-600" data-en="Comprehensive insurance protects both car owners and renters during every trip." data-ar="التأمين الشامل يحمي ملاك السيارات والمستأجرين خلال كل رحلة.">
-                                    Comprehensive insurance protects both car owners and renters خلال كل رحلة.
-                                </p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start space-x-4">
-                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                                <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                </svg>
-                            </div>
-                            <div>
-                                <h3 class="text-lg font-semibold text-gray-900" data-en="Secure Payments (OMR)" data-ar="مدفوعات آمنة (ر.ع.)">Secure Payments (OMR)</h3>
-                                <p class="text-gray-600" data-en="All transactions are processed securely with transparent pricing (OMR) and no hidden fees." data-ar="جميع المعاملات تتم بشكل آمن مع أسعار شفافة (بالريال العماني) وبدون رسوم خفية.">
-                                    All transactions are processed securely with transparent pricing (OMR) and no hidden fees.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4" data-en="Core Platform Features" data-ar="الميزات الأساسية للمنصة">
+                    Core Platform Features
+                </h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto" data-en="All the tools needed for smooth and reliable sharing." data-ar="جميع الأدوات اللازمة لمشاركة سلسة وموثوقة.">
+                    All the tools needed for smooth and reliable sharing.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="p-8 bg-white rounded-xl shadow-md border-t-4 border-teal-600">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 flex items-center">
+                        <svg class="w-6 h-6 mr-3 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                        <span data-en="Role-Based System" data-ar="نظام قائم على الأدوار">Role-Based System</span>
+                    </h3>
+                    <ul class="list-disc list-inside text-gray-600 space-y-2">
+                        <li data-en="Sign up as Car Owner or Renter." data-ar="التسجيل كـ مالك سيارة أو مستأجر.">Sign up as Car Owner or Renter.</li>
+                        <li data-en="Password rule: minimum 6 characters." data-ar="قاعدة كلمة المرور: 6 أحرف على الأقل.">Password rule: minimum 6 characters.</li>
+                        <li data-en="Single Session Rule enforced for security." data-ar="تطبيق قاعدة الجلسة الواحدة للأمان.">Single Session Rule enforced for security.</li>
+                    </ul>
+                </div>
+
+                <div class="p-8 bg-white rounded-xl shadow-md border-t-4 border-coral-500">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 flex items-center">
+                        <svg class="w-6 h-6 mr-3 text-coral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5s3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18s-3.332.477-4.5 1.253"></path></svg>
+                        <span data-en="Owner Management Tools" data-ar="أدوات إدارة المالك">Owner Management Tools</span>
+                    </h3>
+                    <ul class="list-disc list-inside text-gray-600 space-y-2">
+                        <li data-en="Create and Edit detailed car listings." data-ar="إنشاء وتعديل إعلانات السيارات بالتفصيل.">Create and Edit detailed car listings.</li>
+                        <li data-en="Manage availability time slots (e.g., 9:00 a.m. to 11:00 a.m.)." data-ar="إدارة فترات الإتاحة المحددة.">Manage availability time slots (e.g., 9:00 a.m. to 11:00 a.m.).</li>
+                        <li data-en="Monitor booking requests and approve/reject them." data-ar="مراقبة طلبات الحجز والموافقة/الرفض عليها.">Monitor booking requests and approve/reject them.</li>
+                    </ul>
                 </div>
                 
-                <div class="relative hidden lg:block">
-                    <div class="bg-gradient-to-br from-teal-50 to-coral-50 rounded-2xl p-8">
-                        <div class="grid grid-cols-2 gap-4">
-                            <div class="bg-white rounded-xl p-4 shadow-sm">
-                                <div class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mb-3">
-                                    <svg class="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-                                    </svg>
-                                </div>
-                                <div class="text-2xl font-bold text-gray-900">98%</div>
-                                <div class="text-sm text-gray-600" data-en="Satisfaction Rate" data-ar="معدل الرضا">Satisfaction Rate</div>
-                            </div>
-                            
-                            <div class="bg-white rounded-xl p-4 shadow-sm">
-                                <div class="w-12 h-12 bg-coral-100 rounded-lg flex items-center justify-center mb-3">
-                                    <svg class="w-6 h-6 text-coral-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
-                                    </svg>
-                                </div>
-                                <div class="text-2xl font-bold text-gray-900">50%</div>
-                                <div class="text-sm text-gray-600" data-en="Cost Savings (OMR)" data-ar="توفير التكاليف (ر.ع.)">Cost Savings (OMR)</div>
-                            </div>
-                            
-                            <div class="bg-white rounded-xl p-4 shadow-sm">
-                                <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-3">
-                                    <svg class="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                                    </svg>
-                                </div>
-                                <div class="text-2xl font-bold text-gray-900">24/7</div>
-                                <div class="text-sm text-gray-600" data-en="Support Available" data-ar="دعم متاح">Support Available</div>
-                            </div>
-                            
-                            <div class="bg-white rounded-xl p-4 shadow-sm">
-                                <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-3">
-                                    <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                    </svg>
-                                </div>
-                                <div class="text-2xl font-bold text-gray-900">100%</div>
-                                <div class="text-sm text-gray-600" data-en="Verified Users" data-ar="مستخدمون موثقون">Verified Users</div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="p-8 bg-white rounded-xl shadow-md border-t-4 border-accent">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 flex items-center">
+                        <svg class="w-6 h-6 mr-3 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2m-9 0V3h4v2m-4 0h4"></path></svg>
+                        <span data-en="Renter Booking Process" data-ar="عملية الحجز للمستأجر">Renter Booking Process</span>
+                    </h3>
+                    <ul class="list-disc list-inside text-gray-600 space-y-2">
+                        <li data-en="View available cars immediately after login." data-ar="عرض السيارات المتاحة فور تسجيل الدخول.">View available cars immediately after login.</li>
+                        <li data-en="Secure payment via manual transfer to (+968 76944031)." data-ar="الدفع الآمن عبر تحويل يدوي إلى (+968 76944031).">Secure payment via manual transfer to (+968 76944031).</li>
+                        <li data-en="Mandatory upload of payment receipt for confirmation." data-ar="الرفع الإلزامي لإيصال الدفع للتأكيد.">Mandatory upload of payment receipt for confirmation.</li>
+                    </ul>
+                </div>
+
+                <div class="p-8 bg-white rounded-xl shadow-md border-t-4 border-neutral">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 flex items-center">
+                        <svg class="w-6 h-6 mr-3 text-neutral" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.111A9.553 9.553 0 013 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                        <span data-en="Communication and Trust" data-ar="التواصل والثقة">Communication and Trust</span>
+                    </h3>
+                    <ul class="list-disc list-inside text-gray-600 space-y-2">
+                        <li data-en="In-App Messaging system for owner/renter communication." data-ar="نظام مراسلة داخل التطبيق للتواصل بين المالك والمستأجر.">In-App Messaging system for owner/renter communication.</li>
+                        <li data-en="Post-rental rating system for mutual trust." data-ar="نظام تقييم ما بعد الإيجار لبناء الثقة المتبادلة.">Post-rental rating system for mutual trust.</li>
+                        <li data-en="Revenue split: 50% to Owner, 50% to Platform." data-ar="تقسيم الإيرادات: 50% للمالك، 50% للمنصة.">Revenue split: 50% to Owner, 50% to Platform.</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
-
+    
     <footer class="bg-gray-900 text-white py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
@@ -317,17 +205,16 @@
                     </div>
                     <span class="text-2xl font-bold" data-en="Car Sharing" data-ar="مشاركة السيارات">Car Sharing</span>
                 </div>
-                <p class="text-gray-400 mb-6" data-en="Connecting university students through shared transportation." data-ar="ربط طلاب الجامعات من خلال النقل المشترك.">
-                    Connecting university students through shared transportation.
+                <p class="text-gray-400 mb-6" data-en="Connecting university students through smart, shared transportation." data-ar="ربط طلاب الجامعات من خلال النقل المشترك الذكي.">
+                    Connecting university students through smart, shared transportation.
                 </p>
-                <div class="text-sm text-gray-500" data-en="© 2025 Car Sharing. All rights reserved. Built for students, by students." data-ar="© 2025 مشاركة السيارات. جميع الحقوق محفوظة. مبني للطلاب، من قبل الطلاب.">
-                    © 2025 Car Sharing. All rights reserved. Built for students, by students.
+                <div class="text-sm text-gray-500" data-en="© 2025 Car Sharing. All rights reserved. Built for UTAS students, by students." data-ar="© 2025 مشاركة السيارات. جميع الحقوق محفوظة. مبني لطلاب UTAS، من قبل الطلاب.">
+                    © 2025 Car Sharing. All rights reserved. Built for UTAS students, by students.
                 </div>
             </div>
         </div>
     </footer>
 
     <script src="main.js"></script>
-
 </body>
 </html>
