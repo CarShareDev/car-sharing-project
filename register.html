@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Car Sharing - Register</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Cairo:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <style>
+        :root { --primary: #0D4F4F; }
+        body { font-family: 'Inter', sans-serif; background-color: #F8F9FA; }
+        .arabic { font-family: 'Cairo', sans-serif; }
+        .rtl { direction: rtl; text-align: right; }
+        .role-card { transition: all 0.2s; border: 3px solid transparent; }
+        .role-card.selected { border-color: #0D4F4F; background-color: #F0FDF4; box-shadow: 0 4px 6px rgba(13, 79, 79, 0.1); }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+    <div class="w-full max-w-lg p-8 space-y-8 bg-white rounded-xl shadow-2xl">
+        <div class="text-center">
+            <h2 class="text-3xl font-bold text-gray-900" data-en="Create Your Car Sharing Account" data-ar="أنشئ حسابك في مشاركة السيارات">Create Your Car Sharing Account</h2>
+            <p class="mt-2 text-sm text-gray-600" data-en="Start by selecting your role: Owner or Renter." data-ar="ابدأ باختيار دورك: مالك أو مستأجر.">Start by selecting your role: Owner or Renter.</p>
+        </div>
+        
+        <form class="mt-8 space-y-6">
+            <div class="space-y-4">
+                <label class="block text-base font-bold text-gray-800" data-en="Select Your Role" data-ar="اختر دورك">Select Your Role</label>
+                <div class="grid grid-cols-2 gap-4">
+                    <div id="owner-role" class="role-card p-4 rounded-xl cursor-pointer hover:shadow-lg transition-shadow border-2 border-gray-200">
+                        <svg class="w-8 h-8 text-teal-600 mb-2 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        <p class="text-center font-semibold" data-en="Car Owner" data-ar="مالك سيارة">Car Owner</p>
+                    </div>
+                    <div id="renter-role" class="role-card p-4 rounded-xl cursor-pointer hover:shadow-lg transition-shadow border-2 border-gray-200">
+                        <svg class="w-8 h-8 text-teal-600 mb-2 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                        <p class="text-center font-semibold" data-en="Renter" data-ar="مستأجر">Renter</p>
+                    </div>
+                </div>
+            </div>
+            
+            <input type="hidden" id="user-role" name="role" required/>
+            
+            <div>
+                <label for="reg-username" class="block text-sm font-medium text-gray-700" data-en="Username" data-ar="اسم المستخدم">Username</label>
+                <input id="reg-username" name="username" type="text" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500 sm:text-sm" placeholder="User"/>
+            </div>
+            
+            <div>
+                <label for="reg-password" class="block text-sm font-medium text-gray-700" data-en="Password (Min 6 Characters)" data-ar="كلمة المرور (٦ أحرف كحد أدنى)">Password (Min 6 Characters)</label>
+                <input id="reg-password" name="password" type="password" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500 sm:text-sm" placeholder="******"/>
+            </div>
+            
+            <button type="submit" id="register-button" disabled class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gray-400 cursor-not-allowed" data-en="Create Account" data-ar="إنشاء الحساب">Create Account</button>
+        </form>
+        
+        <div class="text-center text-sm">
+            <p data-en="Already have an account?" data-ar="هل لديك حساب بالفعل؟">Already have an account?</p>
+            <a href="login.html" class="font-medium text-teal-600 hover:text-teal-500" data-en="Sign In Here" data-ar="تسجيل الدخول من هنا">Sign In Here</a>
+        </div>
+    </div>
+    <script src="main.js"></script>
+    <script>
+        // تضمين وظيفة تبديل اللغة في هذه الصفحة أيضاً
+        document.addEventListener('DOMContentLoaded', () => {
+            const langToggle = document.getElementById('langToggle');
+            let isArabic = false; 
+
+            if (langToggle) {
+                langToggle.addEventListener('click', () => {
+                    isArabic = !isArabic;
+                    document.body.classList.toggle('arabic', isArabic);
+                    document.body.classList.toggle('rtl', isArabic);
+
+                    const elements = document.querySelectorAll('[data-en], [data-ar]');
+                    elements.forEach(el => {
+                        const text = isArabic ? el.getAttribute('data-ar') : el.getAttribute('data-en');
+                        if (text) {
+                            el.textContent = text;
+                        }
+                    });
+                    langToggle.textContent = isArabic ? 'EN / عربي' : 'EN / عربي';
+                });
+                langToggle.click(); // Set to Arabic initially
+            }
+            
+            // Script for Role Selection
+            const ownerCard = document.getElementById('owner-role');
+            const renterCard = document.getElementById('renter-role');
+            const roleInput = document.getElementById('user-role');
+            const registerButton = document.getElementById('register-button');
+
+            function updateRoleSelection(selectedRole) {
+                ownerCard.classList.remove('selected');
+                renterCard.classList.remove('selected');
+                
+                if (selectedRole === 'Owner') {
+                    ownerCard.classList.add('selected');
+                    roleInput.value = 'Owner';
+                } else if (selectedRole === 'Renter') {
+                    renterCard.classList.add('selected');
+                    roleInput.value = 'Renter';
+                }
+                
+                // Enable button only if a role is selected
+                if (roleInput.value) {
+                    registerButton.disabled = false;
+                    registerButton.classList.remove('bg-gray-400', 'cursor-not-allowed');
+                    registerButton.classList.add('bg-teal-600', 'hover:bg-teal-700');
+                } else {
+                    registerButton.disabled = true;
+                    registerButton.classList.remove('bg-teal-600', 'hover:bg-teal-700');
+                    registerButton.classList.add('bg-gray-400', 'cursor-not-allowed');
+                }
+            }
+
+            ownerCard.addEventListener('click', () => updateRoleSelection('Owner'));
+            renterCard.addEventListener('click', () => updateRoleSelection('Renter'));
+        });
+    </script>
+</body>
+</html>
