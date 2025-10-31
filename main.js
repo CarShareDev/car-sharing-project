@@ -1,8 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Splitting for Hero Text animation (only on index.html)
+    // 1. Splitting for Hero Text animation
     const heroText = document.getElementById('heroText');
     if (heroText) {
-        // Initialize Splitting and Animation
         Splitting({ target: heroText, by: 'chars' });
         anime({
             targets: '.char',
@@ -12,34 +11,33 @@ document.addEventListener('DOMContentLoaded', () => {
             duration: 1200,
             delay: (el, i) => 30 * i
         });
-
-        // 2. Stats Counter
-        const counters = document.querySelectorAll('.stats-counter');
-        counters.forEach(counter => {
-            const target = parseInt(counter.getAttribute('data-target'));
-            const duration = 2000;
-            const startTimestamp = performance.now();
-
-            const step = (timestamp) => {
-                const elapsed = timestamp - startTimestamp;
-                const progress = Math.min(elapsed / duration, 1);
-                const currentCount = Math.floor(progress * target);
-                
-                counter.textContent = currentCount.toString();
-                
-                if (progress < 1) {
-                    window.requestAnimationFrame(step);
-                }
-            };
-
-            window.requestAnimationFrame(step);
-        });
     }
 
-    // 3. Global Language Toggle (Applied to all pages)
+    // 2. Stats Counter
+    const counters = document.querySelectorAll('.stats-counter');
+    counters.forEach(counter => {
+        const target = parseInt(counter.getAttribute('data-target'));
+        const duration = 2000;
+        const startTimestamp = performance.now();
+
+        const step = (timestamp) => {
+            const elapsed = timestamp - startTimestamp;
+            const progress = Math.min(elapsed / duration, 1);
+            const currentCount = Math.floor(progress * target);
+            
+            counter.textContent = currentCount.toString();
+            
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            }
+        };
+
+        window.requestAnimationFrame(step);
+    });
+
+    // 3. Language Toggle (Simplified)
     const langToggle = document.getElementById('langToggle');
-    // نعتبر أن اللغة الافتراضية هي الإنجليزية (false)
-    let isArabic = false; 
+    let isArabic = false;
 
     if (langToggle) {
         langToggle.addEventListener('click', () => {
@@ -59,7 +57,10 @@ document.addEventListener('DOMContentLoaded', () => {
             langToggle.textContent = isArabic ? 'EN / عربي' : 'EN / عربي';
         });
         
-        // إعداد اللغة العربية كإعداد افتراضي عند التحميل
-        langToggle.click(); 
+        // Initial setup for Arabic default (based on previous requests)
+        // If you prefer English default, remove the following lines:
+        if (langToggle) {
+            langToggle.click(); // Click once to set to Arabic initially
+        }
     }
 });
