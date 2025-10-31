@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-<base href="https://53b5nbrqu3fne.ok.kimi.link">
+<base href="https://omranx75-debug.github.io/car-sharing-project/">
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Car Sharing - University Car Sharing Platform</title>
@@ -62,7 +62,7 @@
             color: var(--primary);
         }
     </style>
-<script src="https://statics.moonshot.cn/sdk/preview-widgets.min.js" defer=""></script></head>
+</head>
 <body>
     <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -76,7 +76,6 @@
                 
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#" class="text-gray-700 hover:text-teal-600 transition-colors" data-en="How it Works" data-ar="كيف تعمل">How it Works</a>
-                    <a href="#" class="text-gray-700 hover:text-teal-600 transition-colors" data-en="Available Cars" data-ar="السيارات المتاحة">Available Cars</a>
                     <a href="#" class="text-gray-700 hover:text-teal-600 transition-colors" data-en="Trust &amp; Safety" data-ar="الثقة والأمان">Trust &amp; Safety</a>
                 </div>
                 
@@ -117,8 +116,8 @@
                 <a href="register.html" class="px-8 py-4 bg-white text-teal-600 rounded-xl font-semibold hover:bg-gray-100 transition-all transform hover:scale-105" data-en="Get Started" data-ar="ابدأ الآن">
                     Get Started
                 </a>
-                <a href="#cars" class="px-8 py-4 border-2 border-white text-white rounded-xl font-semibold hover:bg-white hover:text-teal-600 transition-all" data-en="Browse Cars" data-ar="تصفح السيارات">
-                    Browse Cars
+                <a href="#how-it-works" class="px-8 py-4 border-2 border-white text-white rounded-xl font-semibold hover:bg-white hover:text-teal-600 transition-all" data-en="How it Works" data-ar="كيف يعمل">
+                    How it Works
                 </a>
             </div>
         </div>
@@ -135,7 +134,7 @@
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                 <div class="stats-item">
                     <div class="stats-counter" data-target="250">0</div>
-                    <p class="text-gray-600 mt-2" data-en="Active Cars" data-ar="سيارات نشطة">Active Cars</p>
+                    <p class="text-gray-600 mt-2" data-en="Active Car Owners" data-ar="ملاك سيارات نشطون">Active Car Owners</p>
                 </div>
                 <div class="stats-item">
                     <div class="stats-counter" data-target="1200">0</div>
@@ -147,41 +146,13 @@
                 </div>
                 <div class="stats-item">
                     <div class="stats-counter" data-target="50">0</div>
-                    <p class="text-gray-600 mt-2" data-en="% Cost Savings" data-ar="% توفير التكاليف">% Cost Savings</p>
+                    <p class="text-gray-600 mt-2" data-en="% Cost Savings (OMR)" data-ar="% توفير التكاليف (ر.ع.)">% Cost Savings (OMR)</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="cars" class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4" data-en="Available Cars Right Now" data-ar="السيارات المتاحة الآن">
-                    Available Cars Right Now
-                </h2>
-                <p class="text-xl text-gray-600 max-w-2xl mx-auto" data-en="Choose from a variety of cars shared by your fellow students. All verified and ready to go." data-ar="اختر من بين مجموعة متنوعة من السيارات التي يشاركها زملاؤك الطلاب. جميعها موثقة وجاهزة للاستخدام.">
-                    Choose from a variety of cars shared by your fellow students. All verified and ready to go.
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8" id="carGrid">
-                <p id="noCarsMessage" class="col-span-full text-center text-xl text-gray-500 hidden" data-en="No cars are listed at the moment. Check back later!" data-ar="لا توجد سيارات مدرجة في الوقت الحالي. تحقق مرة أخرى لاحقاً!">
-                    No cars are listed at the moment. Check back later!
-                </p>
-            </div>
-            
-            <div class="text-center mt-12">
-                <a href="register.html" class="inline-flex items-center px-6 py-3 bg-teal-600 text-white rounded-lg font-semibold hover:bg-teal-700 transition-colors" data-en="View All Cars" data-ar="عرض جميع السيارات">
-                    View All Cars
-                    <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                    </svg>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-20 bg-gray-50">
+    <section id="how-it-works" class="py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4" data-en="How It Works" data-ar="كيف تعمل">
@@ -211,9 +182,9 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4" data-en="2. Book or List" data-ar="2. احجز أو أدرج">2. Book or List</h3>
-                    <p class="text-gray-600" data-en="Browse available cars or list your own vehicle with your availability and pricing." data-ar="تصفح السيارات المتاحة أو أدرج سيارتك الخاصة مع توافرك وتسعيرك (بالريال العماني)." data-ar-en="Browse available cars or list your own vehicle with your availability and pricing.">
-                        Browse available cars or list your own vehicle with your availability and pricing.
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4" data-en="2. List Car Availability" data-ar="2. أدرج توفر السيارة">2. List Car Availability</h3>
+                    <p class="text-gray-600" data-en="List your vehicle with your availability and pricing (OMR) for other verified students to see." data-ar="أدرج سيارتك مع توفرك وتسعيرك (ر.ع.) ليراه الطلاب الموثوقون الآخرون.">
+                        List your vehicle with your availability and pricing (OMR) for other verified students to see.
                     </p>
                 </div>
                 
@@ -232,7 +203,7 @@
         </div>
     </section>
 
-    <section class="py-20">
+    <section class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
@@ -267,7 +238,7 @@
                             <div>
                                 <h3 class="text-lg font-semibold text-gray-900" data-en="Insurance Coverage" data-ar="تغطية تأمينية">Insurance Coverage</h3>
                                 <p class="text-gray-600" data-en="Comprehensive insurance protects both car owners and renters during every trip." data-ar="التأمين الشامل يحمي ملاك السيارات والمستأجرين خلال كل رحلة.">
-                                    Comprehensive insurance protects both car owners and renters during every trip.
+                                    Comprehensive insurance protects both car owners and renters خلال كل رحلة.
                                 </p>
                             </div>
                         </div>
@@ -279,16 +250,16 @@
                                 </svg>
                             </div>
                             <div>
-                                <h3 class="text-lg font-semibold text-gray-900" data-en="Secure Payments" data-ar="مدفوعات آمنة (بالريال العماني)">Secure Payments (OMR)</h3>
+                                <h3 class="text-lg font-semibold text-gray-900" data-en="Secure Payments (OMR)" data-ar="مدفوعات آمنة (ر.ع.)">Secure Payments (OMR)</h3>
                                 <p class="text-gray-600" data-en="All transactions are processed securely with transparent pricing (OMR) and no hidden fees." data-ar="جميع المعاملات تتم بشكل آمن مع أسعار شفافة (بالريال العماني) وبدون رسوم خفية.">
-                                    All transactions are processed securely with transparent pricing and no hidden fees.
+                                    All transactions are processed securely with transparent pricing (OMR) and no hidden fees.
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="relative">
+                <div class="relative hidden lg:block">
                     <div class="bg-gradient-to-br from-teal-50 to-coral-50 rounded-2xl p-8">
                         <div class="grid grid-cols-2 gap-4">
                             <div class="bg-white rounded-xl p-4 shadow-sm">
@@ -308,7 +279,7 @@
                                     </svg>
                                 </div>
                                 <div class="text-2xl font-bold text-gray-900">50%</div>
-                                <div class="text-sm text-gray-600" data-en="Cost Savings" data-ar="توفير التكاليف (بالريال)">Cost Savings (OMR)</div>
+                                <div class="text-sm text-gray-600" data-en="Cost Savings (OMR)" data-ar="توفير التكاليف (ر.ع.)">Cost Savings (OMR)</div>
                             </div>
                             
                             <div class="bg-white rounded-xl p-4 shadow-sm">
